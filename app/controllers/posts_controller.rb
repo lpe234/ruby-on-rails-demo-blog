@@ -4,12 +4,19 @@ class PostsController < ApplicationController
     @post = Post.all
   end
 
+  # 创建Form页面
   def new
-
+    @post = Post.new
   end
 
+  # 实际创建接口
   def create
-
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, :notice=>'Your post was saved'
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -26,6 +33,11 @@ class PostsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 
 end
