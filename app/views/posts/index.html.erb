@@ -5,6 +5,7 @@
     <p><%=post.content%></p>
     <hr>
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Delete', post, :confirm => 'Are you sure', :method => :delete %></p>
 <% end %>
 
-<p><%=link_to 'Add a post', new_post_path%></p>
+<p><%= link_to 'Add a post', new_post_path %></p>
