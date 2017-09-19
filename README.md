@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+---
+
+## Ruby on Rails Demo
+
+```bash
+
+# to run 
+rails s
+
+# db migrate
+rake db:migrate
+
+```
+
